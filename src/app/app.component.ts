@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddRecordComponent } from './add-record/add-record.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CRUD';
+
+  constructor(private _dialogue: MatDialog){}
+
+  addRecord(){
+    this._dialogue.open(AddRecordComponent)
+  }
+
 }
